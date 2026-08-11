@@ -3,6 +3,7 @@ import react, { reactCompilerPreset } from '@vitejs/plugin-react'
 import babel from '@rolldown/plugin-babel'
 import tailwindcss from '@tailwindcss/vite'
 
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -11,6 +12,14 @@ export default defineConfig({
     tailwindcss()
   ],
   resolve: {
-    alias: [{ find: '@', replacement: '/src' }]
+    alias: [
+      { find: '@', replacement: '/src' }
+    ]
+  },
+  // 개발용 서버 옵션
+  server: {
+    proxy: {
+      '/api':{ target: 'http://localhost:3000'}
+    }
   }
 })

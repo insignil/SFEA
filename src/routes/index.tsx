@@ -1,4 +1,6 @@
 // Data Mode(CSR)
+// hash router: /#/path
+// browser router: /path
 //import { lazy, Suspense } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 // import { ErrorBoundary } from 'react-error-boundary'
